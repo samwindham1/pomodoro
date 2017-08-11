@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Pomodoro Clock</title>
+
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css'>
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+  <link href="https://fonts.googleapis.com/css?family=Comfortaa:400,700|Open+Sans|Inconsolata" rel="stylesheet">
+
+  <div class="container-fluid">
+    <div class="row d-flex justify-content-center content">
+      <div class="col-xl-6 col-lg-8 col-md-10 col-sm-11 ">
+        <div class="title-container text-center">
+          <h1 class="title noselect">Pomodoro</h1>
+        </div>
+        <div class="settings text-center noselect row">
+          <div class="col-6">
+            <h5>Break Length</h5>
+            <div>
+              <h1 class="d-inline" id="red-break-time">&#8211</h1>
+              <h1 class="d-inline" id="break-time">5</h1>
+              <h1 class="d-inline" id="inc-break-time">+</h1>
+            </div>
+          </div>
+          <div class="col-6">
+            <h5>Session Length</h5>
+            <div>
+              <h1 class="d-inline" id="red-sess-time">&#8211</h1>
+              <h1 class="d-inline" id="session-time">25</h1>
+              <h1 class="d-inline" id="inc-sess-time">+</h1>
+            </div>
+          </div>
+        </div>
+        <div class="clock-container text-center">
+          <div class="clock center progress-0" title="Start/Reset Timer">
+            <div class="overlay center">
+              <h1 class="time noselect">25:00</h1>
+            </div>
+          </div>
+        </div>
+        <div class="text-center">
+          <h2 class="status">SESSION</h2>
+        </div>
+      </div>
+    </div>
+    <div class="row footer fixed-bottom">
+      <div class="col-12 center text-center">
+        <span><i class="fa fa-github fa-lg" aria-hidden="true"></i><a href="https://github.com/samwindham1" class="link" title="See Sam on Github">Sam Windham</a></span>
+      </div>
+    </div>
+  </div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+  <script src='https://use.fontawesome.com/ee0b815467.js'></script>
+
+  <script src="js/index.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,131 @@
+@import compass
+
+// variables
+$bg-color: #555
+$bg-color-hover: #666
+$font-color: #eee
+$accent-color: #d83c5b
+
+
+// Utilities
+.border
+  border: dashed 1px $font-color
+
+.center
+  margin-left: auto
+  margin-right: auto
+
+.content div
+  // border: dashed 1px $font-color
+
+.noselect
+  -webkit-touch-callout: none
+  -webkit-user-select: none
+  -khtml-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  user-select: none
+
+// Element styles
+body
+  min-width: 380px
+  min-height: 500px
+  font-family: 'Comfortaa', cursive
+  background-color: $bg-color
+  color: $font-color
+  cursor: default
+
+
+// Class styles
+
+// Contatiners
+.content
+  height: 90vh
+
+.footer
+  height: 60px
+  padding: 20px 0
+  font-family: 'Open Sans', sans-serif
+  color: $font-color
+  .link
+    color: $font-color
+    margin-left: 4px
+    z-index: 50
+    font-size: 0.9em
+    vertical-align: middle
+
+
+// Elements
+.title-container
+  margin: 30px auto 100px
+  .title
+    font-size: 4em
+    font-weight: bold
+
+.settings
+  margin-bottom: 30px
+  #red-break-time, #inc-break-time, #red-sess-time, #inc-sess-time
+    cursor: pointer
+  #break-time, #session-time
+    font-family: 'Inconsolata', monospace
+    margin-left: 10px
+    margin-right: 10px
+
+.clock
+  $clock-size: 284px
+  width: $clock-size
+  height: $clock-size
+  border-radius: 50%
+  background-color: $accent-color
+  image-rendering: crisp-edges
+  font-family: 'Inconsolata', monospace
+  font-size: 1.5em
+
+.clock .overlay
+  position: absolute
+  width: 252px
+  height: 252px
+  margin-top: 15px
+  margin-left: 15px
+  padding-top: 75px
+  border-radius: 50%
+  background-color: $bg-color
+  border: solid 2px $accent-color
+  cursor: pointer
+  &:hover
+    background-color: $bg-color-hover
+  .time
+    font-size: 3.5em
+    
+.break
+  color: #73B1C3
+
+.status
+  margin-top: 10px
+
+// Animation
+.flash
+  background-color: $accent-color
+  transition: background-color 0.1s
+body
+  transition: background-color 0.1s
+
+  
+/* -------------------------------------
+ * Mixin for progress-% class
+ * ------------------------------------- */
+
+$step: 1 // step of % for created classes
+
+$loops: round(100 / $step)
+$increment: 360 / $loops
+$half: round($loops / 2)
+@for $i from 0 through $loops
+  .progress-#{$i*$step}
+    @if $i < $half
+      $nextdeg: 90deg + ( $increment * $i )
+      background-image: linear-gradient(90deg, $bg-color 50%, transparent 50%, transparent), linear-gradient($nextdeg, $accent-color 50%, $bg-color 50%, $bg-color)
+    @else
+      $nextdeg: -90deg + ( $increment * ( $i - $half ) )
+      background-image: linear-gradient($nextdeg, $accent-color 50%, transparent 50%, transparent), linear-gradient(270deg, $accent-color 50%, $bg-color 50%, $bg-color)
+
